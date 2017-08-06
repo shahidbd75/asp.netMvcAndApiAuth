@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>category list</title>
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <h2>Category</h2>
+    </div>
+    <script src="../../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            debugger;
+            $.get("/api/category").success(function (data, status, xhr) {
+                console.log(data);
+            }).error(function (message) {
+                console.log(message);
+                alert(message);
+                });
+        });
+    </script>
+</body>
+</html>

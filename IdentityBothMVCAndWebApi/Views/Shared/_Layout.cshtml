@@ -21,10 +21,17 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    @Html.ActionLink("Home","Index","Home",new { @class= "navbar" })
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        @Html.ActionLink("Product", "Index", "Product", new { @class = "navbar" })
+                       <li> @Html.ActionLink("Product", "Index", "Product")</li>
+                      
+                    }
+                </ul>
+                <ul class="nav navbar-nav navbar-right" >
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Logout","Logout","Authentication")</li>
                     }
                 </ul>
             </div>
